@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// Basic string template example
+		const name = 'Snickers';
+		const age = 2;
+		const sentence = `My dog ${name} is ${age * 7} years old`;
+		console.log(sentence);
+
+		// Allows text to span multiple lines
+		const person = {
+			name: 'Richard',
+			job: "Software developer",
+			city: 'Atlanta',
+			bio: 'Likes hiking'
+		};
+
+		const markup = `
+		<div class="person">
+			<h2>
+				${person.name}<br>
+				<span class="job">${person.job}</span>
+			</h2>
+			<p class="location">${person.city}</p>
+			<p class="bio">${person.bio}</p>
+		</div>
+		`;
+		console.log(markup);
+		document.body.innerHTML = markup;
+
+		// Using loops in templates
+		const dogs = [
+			{ name: 'Snickers', age: 2 },
+			{ name: 'Hugo', age: 8 },
+			{ name: 'Boomer', age: 1 }
+		];
+		const markup_dogs = `
+		<ul class="dogs">
+			${dogs.map(dog => `
+				<li class="dog">
+					${dog.name} is ${dog.age * 7} years old
+				</li>`
+			).join('')}
+		</ul>
+		`;
+		console.log(markup_dogs);
+		document.body.innerHTML = markup_dogs;
+
+		// Using if statements in templates
+		const song = {
+			name: 'Dying to live',
+			artist: 'Tupac',
+			featuring: 'Biggie Smalls'
+		};
+		const markup_songs = `
+		<div class="song">
+			<p>
+				${song.name} - ${song.artist}<br>
+				${song.featuring ? `(Featuring: ${song.featuring})` : ''}
+			</p>
+		</div>
+		`;
+		console.log(markup_songs);
+		document.body.innerHTML = markup_songs;
+
+		//Calling a function in a template
+		const beer = {
+			name: 'Belgian Wit',
+			brewery: 'Steam Whistle Brewery',
+			keywords: ['pale', 'cloudy', 'spiced', 'crisp']
+		};
+
+		function renderKeywords(keywords) {
+			return `
+				<ul>
+					${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+				</ul>
+			`;
+		}
+
+		const markup_beer = `
+			<div class="beer">
+				<h2>${beer.name}</h2>
+				<p class="brewery">${beer.brewery}</p>
+				${renderKeywords(beer.keywords)}
+			</div>
+		`;
+		console.log(markup_beer);
+		document.body.innerHTML = markup_beer;
+	</script>
+</body>
+</html>

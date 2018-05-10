@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Tagged Templates</title>
 	<style>
 		abbr {
 		  border-bottom:1px dotted grey;
@@ -15,8 +15,8 @@
 	<div class="bio">
 
 	</div>
-</body>
-<script>
+	<script>
+		/*
 		function highlight(strings, ...values) {
 			let str = '';
 			strings.forEach((string, i) => {
@@ -31,7 +31,8 @@
 		const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
 		document.body.innerHTML = sentence;
 		console.log(sentence);
-
+		*/
+		
 		// Another example 
 		const dict = {
 			HTML: 'Hyper Text Markup Language',
@@ -52,14 +53,15 @@
 			}, '');
 		}
 
-	const first = 'Richard';
-	const last = 'Memory';
-	const sentence2 = addAbbreviations`Hi my name is ${first} ${last} and I love to code ${'JS'}, ${'HTML'} and ${'CSS'} all day and all night long!`
+		const first = 'Richard';
+		const last = 'Memory';
+		const sentence2 = addAbbreviations`Hi my name is ${first} ${last} and I love to code ${'JS'}, ${'HTML'} and ${'CSS'} all day and all night long!`
 
-	const bio = document.querySelector('.bio');
-	const p = document.createElement('p');
-	p.innerHTML = sentence2;
-	bio.appendChild(p);
+		const bio = document.querySelector('.bio');
+		const p = document.createElement('p');
+		p.innerHTML = sentence2;
+		bio.appendChild(p);
 		
 	</script>
+</body>
 </html>

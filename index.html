@@ -40,7 +40,7 @@
 		console.log(markup);
 		document.body.innerHTML = markup;
 
-		// Using loops in templates
+		// Using loops in templates and nesting template strings
 		const dogs = [
 			{ name: 'Snickers', age: 2 },
 			{ name: 'Hugo', age: 8 },
@@ -52,7 +52,7 @@
 				<li class="dog">
 					${dog.name} is ${dog.age * 7} years old
 				</li>`
-			).join('')}
+			).join('')} // Get rid of commas with join
 		</ul>
 		`;
 		console.log(markup_dogs);
@@ -75,7 +75,7 @@
 		console.log(markup_songs);
 		document.body.innerHTML = markup_songs;
 
-		//Calling a function in a template
+		//Calling a function in a template (reduce harriness of code)
 		const beer = {
 			name: 'Belgian Wit',
 			brewery: 'Steam Whistle Brewery',
